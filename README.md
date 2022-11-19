@@ -4,4 +4,9 @@ https://github.com/launchbadge/sqlx/tree/main/sqlx-cli#enable-building-in-offlin
 
 sqlx database create
 
+
+if you need new migration:
+
+sqlx migrate add {name}
+
 sqlx migrate run

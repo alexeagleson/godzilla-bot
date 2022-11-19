@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Godzilla",
+    "year": 1954,
+    "monsters": "None"
+  },
+  {
+    "id": 2,
+    "title": "Godzilla Raids Again",
+    "year": 1955,
+    "monsters": "Anguirus"
+  },
+  {
+    "id": 3,
+    "title": "King Kong vs. Godzilla",
+    "year": 1962,
+    "monsters": "King Kong"
+  },
+  {
+    "id": 4,
+    "title": "Mothra vs. Godzilla",
+    "year": 1964,
+    "monsters": "Mothra"
+  },
+  {
+    "id": 5,
+    "title": "Ghidorah, the Three-Headed Monster",
+    "year": 1964,
+    "monsters": "King Ghidorah, Rodan, Mothra"
+  },
+  {
+    "id": 6,
+    "title": "Invasion of Astro-Monster",
+    "year": 1965,
+    "monsters": "King Ghidorah, Rodan"
+  },
+  {
+    "id": 7,
+    "title": "Ebirah, Horror of the Deep",
+    "year": 1966,
+    "monsters": "Ebirah, Mothra"
+  },
+  {
+    "id": 8,
+    "title": "Son of Godzilla",
+    "year": 1967,
+    "monsters": "Minilla, Kumonga, Kamacuras"
+  },
+  {
+    "id": 9,
+    "title": "Destroy All Monsters",
+    "year": 1968,
+    "monsters": "King Ghidorah, Rodan, Mothra, Anguirus, Minilla, Kumonga, Manda, Gorosaurus, Baragon, Varan"
+  },
+  {
+    "id": 10,
+    "title": "All Monsters Attack",
+    "year": 1969,
+    "monsters": "Gabara, Minilla, Kamacuras, Ebirah, Kumonga, the Ookondoru, Maneater, Anguirus, Gorosaurus, Manda"
+  }
+]
