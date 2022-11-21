@@ -14,7 +14,11 @@ const HELP: &'static str = r#"```
 /gz countdown            -- Run a countdown from 10 to 0 
 /gz monster {NAME or ID} -- Get monster info
 
+Film Info:
+https://github.com/alexeagleson/godzilla-bot/blob/main/films.json
 
+Monster Info:
+https://github.com/alexeagleson/godzilla-bot/blob/main/monsters.json
 ```"#;
 
 struct Bot {
@@ -277,11 +281,7 @@ impl Display for Film {
 #[tokio::main]
 async fn main() {
     dotenvy::dotenv().ok();
-    // std::env::set_var("DATABASE_URL", "sqlite:examples/e16_sqlite_database/database.sqlite");
-    // std::env::set_var(
-    //     "DISCORD_TOKEN",
-    //     "MTA0MTIwMzgzMjQyNTgwNzk4Mw.G-_by5.YZvaFZbnlbnBDIZJjU0-Lt9Q_hg7xemRdCuJXU",
-    // );
+
     // Configure the client with your Discord bot token in the environment.
     let token = std::env::var("DISCORD_TOKEN").expect("Expected a token in the environment");
 
