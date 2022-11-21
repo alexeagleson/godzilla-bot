@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1,
+    "name": "Godzilla",
+    "alternate_names": "Gojira, Goji, King of the Monsters, Gigantis, Monster Zero-One, Papa Godzilla, Monster of Justice, God of Destruction, Nautilus, Alpha Predator, Species 5146_Adam, Incarnation of God, Titanus Gojira, Gojira-kun, Big Gray Gecko, Kaiju Alpha,GL Big G, G-Man, Zo-zla-halawa, Koshira",
+    "wikipedia": "https://en.wikipedia.org/wiki/Godzilla",
+    "wikizilla": "https://wikizilla.org/wiki/Godzilla",
+    "description": "Godzilla (ゴジラ Gojira) is a daikaiju who first appeared in the 1954 Toho film Godzilla."
+  },
+
+  {
+    "id": 2,
+    "name": "Anguirus",
+    "alternate_names": "Angilas, Angurus, Angorus, Bōryu Anguirus, Anguillasaurus, Angillus, Anguillas, Anzilla, Angy, Angiras",
+    "wikipedia": "https://en.wikipedia.org/wiki/Anguirus",
+    "wikizilla": "https://wikizilla.org/wiki/Anguirus",
+    "description": "Anguirus (アンギラス Angirasu) is a giant Ankylosaurus kaiju who first appeared in the 1955 Toho Godzilla film Godzilla Raids Again."
+  },
+  {
+    "id": 3,
+    "name": "King Kong",
+    "alternate_names": "Kong, The Eighth Wonder of the World, The Eighth Wonder, The Beast, The Greatest King, Monkey, Kingkong",
+    "wikipedia": "https://en.wikipedia.org/wiki/King_Kong",
+    "wikizilla": "https://wikizilla.org/wiki/King_Kong",
+    "description": "King Kong (キングコング Kingu Kongu)[note 1] is a giant ape monster who first appeared in the 1933 RKO Radio Pictures film King Kong. He first encountered Godzilla in the 1962 Toho Godzilla film King Kong vs. Godzilla."
+  },
+  {
+    "id": 4,
+    "name": "Mothra",
+    "alternate_names": "Mosla, The Thing, Mrs. Mothra, The Queen of Monsters, Houtua's God, The Egg butterfly",
+    "wikipedia": "https://en.wikipedia.org/wiki/Mothra",
+    "wikizilla": "https://wikizilla.org/wiki/Mothra",
+    "description": "Mothra (モスラ Mosura) is a giant divine moth kaiju who first appeared in the 1961 serialized novel The Luminous Fairies and Mothra, which was adapted the same year by Toho into the film Mothra. Mothra made her first appearance alongside Godzilla in the 1964 Godzilla film Mothra vs. Godzilla."
+  },
+  {
+    "id": 5,
+    "name": "King Ghidorah",
+    "alternate_names": "Ghidorah, Ghidrah, King Ghidrah, Monster Zero, Grand King Ghidorah, Demon of the Galaxy, Supreme Ruler of the Cosmos",
+    "wikipedia": "https://en.wikipedia.org/wiki/King_Ghidorah",
+    "wikizilla": "https://wikizilla.org/wiki/King_Ghidorah",
+    "description": "King Ghidorah (キングギドラ Kingu Gidora), also known as Monster Zero (モンスター・ゼロ Monsutā Zero),[note 4] is a three-headed dragon kaiju who first appeared in the 1964 Godzilla film Ghidorah, the Three-Headed Monster."
+  },
+  {
+    "id": 6,
+    "name": "Rodan",
+    "alternate_names": "Radon, Monster Zero-Two, Fire Rodan, Fire Demon, Titanus Rodan",
+    "wikipedia": "https://en.wikipedia.org/wiki/Rodan",
+    "wikizilla": "https://wikizilla.org/wiki/Rodan",
+    "description": "Rodan (ラドン Radon) is a giant Pteranodon kaiju who first appeared in the 1956 Toho film Rodan, and made his first appearance alongside Godzilla in the 1964 Godzilla film Ghidorah, the Three-Headed Monster."
+  },
+  {
+    "id": 7,
+    "name": "Ebirah",
+    "alternate_names": "The Sea Monster, Evirah",
+    "wikipedia": "https://en.wikipedia.org/wiki/Ebirah",
+    "wikizilla": "https://wikizilla.org/wiki/Ebirah",
+    "description": "Ebirah (エビラ Ebira) is a giant crustacean kaiju who first appeared in the 1966 Toho Godzilla film Ebirah, Horror of the Deep."
+  },
+  {
+    "id": 8,
+    "name": "Minilla",
+    "alternate_names": "Minira, Minya, Milla, Child Godzilla, Godzilla Junior, Childzilla, Minila",
+    "wikipedia": "https://en.wikipedia.org/wiki/Minilla",
+    "wikizilla": "https://wikizilla.org/wiki/Minilla",
+    "description": "Minilla  (ミニラ Minira) is an infant Godzilla kaiju who first appeared in the 1967 Toho Godzilla film Son of Godzilla."
+  },
+  {
+    "id": 9,
+    "name": "Kumonga",
+    "alternate_names": "Spiga, Spiega, Smegor",
+    "wikipedia": "https://en.wikipedia.org/wiki/Kumonga",
+    "wikizilla": "https://wikizilla.org/wiki/Kumonga",
+    "description": "Kumonga (クモンガ Kumonga) is a giant spider kaiju who first appeared in the 1967 Toho Godzilla film Son of Godzilla."
+  },
+  {
+    "id": 10,
+    "name": "Kamacuras",
+    "alternate_names": "Gimantis, G-Mantide, Kamacurus, Kamakilas, Kamakiras, Giant Praying Mantis",
+    "wikipedia": "https://en.wikipedia.org/wiki/Kamacuras",
+    "wikizilla": "https://wikizilla.org/wiki/Kamacuras",
+    "description": "Kamacuras (カマキラス Kamakirasu) is a praying mantis kaiju who first appeared in the 1967 Toho Godzilla film, Son of Godzilla."
+  },
+  {
+    "id": 11,
+    "name": "Manda",
+    "alternate_names": "Wenda, Manta",
+    "wikipedia": "https://en.wikipedia.org/wiki/Manda_(kaiju)",
+    "wikizilla": "https://wikizilla.org/wiki/Manda",
+    "description": "Manda (マンダ Manda) is a sea dragon kaiju who first appeared in the 1963 Toho film Atragon."
+  },
+  {
+    "id": 12,
+    "name": "Gorosaurus",
+    "alternate_names": "Goro, Goro-Saurus, Gorosaurs, Marvelous Atomic Dinosaur, Gorogorogoro-chan",
+    "wikipedia": "https://en.wikipedia.org/wiki/Gorosaurus",
+    "wikizilla": "https://wikizilla.org/wiki/Gorosaurus",
+    "description": "Gorosaurus (ゴロザウルス Gorozaurusu) is a dinosaur kaiju who first appeared in the 1967 Toho film, King Kong Escapes, and later debuted in the Godzilla series in the 1968 film Destroy All Monsters."
+  },
+  {
+    "id": 13,
+    "name": "Baragon",
+    "alternate_names": "Varagon, Baragon-kun, Baragora, God of the Earth, Red Monster, Red Godzilla, Baragon 2002",
+    "wikipedia": "https://en.wikipedia.org/wiki/Baragon",
+    "wikizilla": "https://wikizilla.org/wiki/Baragon",
+    "description": "Baragon (バラゴン Baragon) is a subterranean reptile kaiju who first appeared in the 1965 Toho film Frankenstein vs. Baragon, and later debuted in the Godzilla series in the 1968 film Destroy All Monsters."
+  },
+  {
+    "id": 14,
+    "name": "Varan",
+    "alternate_names": "Baradagi Mountain God, Baradagi, Baradagi-sama, Obake, Varan the Unbelievable",
+    "wikipedia": "https://en.wikipedia.org/wiki/Varan",
+    "wikizilla": "https://wikizilla.org/wiki/Varan",
+    "description": "Varan (バラン Baran) is a triphibian kaiju who first appeared in the 1958 Toho film Varan, and later debuted in the Godzilla series in the 1968 film Destroy All Monsters."
+  },
+  {
+    "id": 15,
+    "name": "Gabara",
+    "alternate_names": "Gebara, Gavalla, Gavara, Gaborah, Gabra, Bakara",
+    "wikipedia": null,
+    "wikizilla": "https://wikizilla.org/wiki/Gabara",
+    "description": "Gabara (ガバラ Gabara) is a mutant amphibian kaiju who first appeared in the 1969 Toho Godzilla film, All Monsters Attack."
+  },
+  {
+    "id": 16,
+    "name": "Ookondoru",
+    "alternate_names": "Giant Eagle, Ookondoru, Oowashi, Daikondoru, Daiwashi",
+    "wikipedia": null,
+    "wikizilla": "https://wikizilla.org/wiki/Giant_Condor",
+    "description": "The Giant Condor (大コンドル Ōkondoru) is a giant bird kaiju who first appeared in the 1966 Toho Godzilla film Ebirah, Horror of the Deep. The creature later appeared through stock footage as the Giant Eagle (大ワシ Ōwashi) in the 1969 Godzilla film All Monsters Attack."
+  },
+  {
+    "id": 17,
+    "name": "Oodako",
+    "alternate_names": "Ōdako, Oodako, Giant Devilfish, Dagora",
+    "wikipedia": null,
+    "wikizilla": "https://wikizilla.org/wiki/Giant_Octopus",
+    "description": "The Giant Octopus (大ダコ Ōdako) is a cephalopod kaiju who first appeared in the 1962 Toho Godzilla film King Kong vs. Godzilla. It returned in the alternate ending of Frankenstein vs. Baragon, and finally in The War of the Gargantuas."
+  },
+  {
+    "id": 18,
+    "name": "Maneater",
+    "alternate_names": "Man-Eating Plant, Man-Eating Plant of Dream Monster Island",
+    "wikipedia": null,
+    "wikizilla": "https://wikizilla.org/wiki/Maneater",
+    "description": "The Maneater (人喰い植物 Hitokui Shokubutsu, lit. Man-Eating Plant) is a humanoid plant kaiju created by Toho that first appeared in the 1969 Godzilla film, All Monsters Attack."
+  },
+  {
+    "id": 19,
+    "name": "Hedorah",
+    "alternate_names": "Smog Monster, Hedoron, Hedrah, Hedora, Hydrox, Gomi, Hedoji, Hedochi, Hedchi, Hedlla, Hedorium",
+    "wikizilla": "https://wikizilla.org/wiki/Hedorah",
+    "wikipedia": "https://en.wikipedia.org/wiki/Hedorah",
+    "description": "Hedorah (ヘドラ Hedora) is an alien pollution kaiju who first appeared in the 1971 Toho Godzilla film Godzilla vs. Hedorah."
+}
+
+  
+
+  
+
+  
+
+]
+
+
+
+
+

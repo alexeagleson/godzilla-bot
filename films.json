@@ -3,60 +3,87 @@
     "id": 1,
     "title": "Godzilla",
     "year": 1954,
-    "monsters": "None"
+    "wikipedia": "https://en.wikipedia.org/wiki/Godzilla_(1954_film)",
+    "monsters": []
   },
   {
     "id": 2,
     "title": "Godzilla Raids Again",
     "year": 1955,
-    "monsters": "Anguirus"
+    "wikipedia": "https://en.wikipedia.org/wiki/Godzilla_Raids_Again",
+    "monsters": [2]
+    
   },
   {
     "id": 3,
     "title": "King Kong vs. Godzilla",
     "year": 1962,
-    "monsters": "King Kong"
+    "wikipedia": "https://en.wikipedia.org/wiki/King_Kong_vs._Godzilla",
+    "monsters": [3, 17]
   },
   {
     "id": 4,
     "title": "Mothra vs. Godzilla",
     "year": 1964,
-    "monsters": "Mothra"
+    "wikipedia": "https://en.wikipedia.org/wiki/Mothra_vs._Godzilla",
+    "monsters": [4]
   },
   {
     "id": 5,
     "title": "Ghidorah, the Three-Headed Monster",
     "year": 1964,
-    "monsters": "King Ghidorah, Rodan, Mothra"
+    "wikipedia": "https://en.wikipedia.org/wiki/Ghidorah,_the_Three-Headed_Monster",
+    "monsters": [4, 5, 6]
   },
   {
     "id": 6,
     "title": "Invasion of Astro-Monster",
     "year": 1965,
-    "monsters": "King Ghidorah, Rodan"
+    "wikipedia": "https://en.wikipedia.org/wiki/Invasion_of_Astro-Monster",
+    "monsters": [5, 6]
   },
   {
     "id": 7,
     "title": "Ebirah, Horror of the Deep",
     "year": 1966,
-    "monsters": "Ebirah, Mothra"
+    "wikipedia": "https://en.wikipedia.org/wiki/Ebirah,_Horror_of_the_Deep",
+    "monsters": [7, 4, 16]
   },
   {
     "id": 8,
     "title": "Son of Godzilla",
     "year": 1967,
-    "monsters": "Minilla, Kumonga, Kamacuras"
+    "wikipedia": "https://en.wikipedia.org/wiki/Son_of_Godzilla",
+    "monsters": [8, 9, 10]
   },
   {
     "id": 9,
     "title": "Destroy All Monsters",
     "year": 1968,
-    "monsters": "King Ghidorah, Rodan, Mothra, Anguirus, Minilla, Kumonga, Manda, Gorosaurus, Baragon, Varan"
+    "wikipedia": "https://en.wikipedia.org/wiki/Destroy_All_Monsters",
+    "monsters": [5, 6, 4, 2, 8, 9, 11, 12, 13, 14 ]
   },
   {
     "id": 10,
     "title": "All Monsters Attack",
     "year": 1969,
-    "monsters": "Gabara, Minilla, Kamacuras, Ebirah, Kumonga, the Ookondoru, Maneater, Anguirus, Gorosaurus, Manda"
+    "wikipedia": "https://en.wikipedia.org/wiki/All_Monsters_Attack",
+    "monsters": [15, 8, 10, 7, 9, 16, 18, 2, 12, 11]
+  },
+  {
+    "id": 11,
+    "title": "Godzilla vs. Hedorah",
+    "year": 1971,
+    "wikipedia": "https://en.wikipedia.org/wiki/Godzilla_vs._Hedorah",
+    "monsters": [19]
+  },
+  {
+    "id": 12,
+    "title": "Godzilla, Mothra and King Ghidorah: Giant Monsters All-Out Attack",
+    "year": 2001,
+    "wikipedia": "https://en.wikipedia.org/wiki/Godzilla,_Mothra_and_King_Ghidorah:_Giant_Monsters_All-Out_Attack",
+    "monsters": [4, 5, 13]
   }
+
+  
 ]

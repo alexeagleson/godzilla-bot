@@ -9,14 +9,35 @@ use serenity::model::prelude::*;
 use serenity::prelude::*;
 
 const HELP: &'static str = r#"```
-/gz           -- SKREEONK!
-/gz films     -- Show all films
-/gz countdown -- Start a countdown from 10
+/gz                      -- SKREEONK!
+/gz help                 -- Get help
+/gz countdown            -- Run a countdown from 10 to 0 
+/gz monster {NAME or ID} -- Get monster info
+
+
 ```"#;
 
 struct Bot {
     database: sqlx::SqlitePool,
-    films: Vec<Film>,
+}
+
+#[derive(Deserialize, Debug)]
+struct Film {
+    pub id: i32,
+    pub title: String,
+    pub year: i32,
+    pub wikipedia: String,
+    pub monsters: Vec<i32>,
+}
+
+#[derive(Deserialize, Debug)]
+struct Monster {
+    pub id: i32,
+    pub name: String,
+    pub alternate_names: String,
+    pub wikipedia: Option<String>,
+    pub wikizilla: String,
+    pub description: String,
 }
 
 #[async_trait]
@@ -80,20 +101,6 @@ impl EventHandler for Bot {
 
         //     msg.channel_id.say(&ctx, response).await.unwrap();
         if msg.content.trim() == "/gz" {
-            // // "SELECT" will return just the task of all rows where user_Id column = user_id in todo.
-            // let todos = sqlx::query!(
-            //     "SELECT task FROM todo WHERE user_id = ? ORDER BY rowid",
-            //     user_id
-            // )
-            // .fetch_all(&self.database) // < All matched data will be sent to todos
-            // .await
-            // .unwrap();
-
-            // let mut response = format!("You have {} pending tasks:\n", todos.len());
-            // for (i, todo) in todos.iter().enumerate() {
-            //     writeln!(response, "{}. {}", i + 1, todo.task).unwrap();
-            // }
-
             msg.channel_id
                 .say(&ctx, format!("SKREEONK!"))
                 .await
@@ -101,12 +108,36 @@ impl EventHandler for Bot {
         } else if msg.content.trim() == "/gz films" {
             let mut buffer_string = String::new();
 
-            for film in &self.films {
-                buffer_string.push_str(&film.to_string());
-                buffer_string.push_str("\n");
+            let films = sqlx::query!("SELECT * FROM films")
+                .fetch_all(&self.database)
+                .await
+                .unwrap();
+
+            for film in films {
+                buffer_string.push_str(&format!(
+                    "{}. {} ({})\n<{}>\n\n",
+                    film.id, film.title, film.year, film.wikipedia
+                ));
             }
 
             msg.channel_id.say(&ctx, buffer_string).await.unwrap();
+        } else if msg.content.trim() == "/gz monsters" {
+            // let mut buffer_string = String::new();
+
+            // let monsters = sqlx::query!("SELECT * FROM monsters")
+            //     .fetch_all(&self.database)
+            //     .await
+            //     .unwrap();
+
+            // for monster in monsters {
+            //     buffer_string.push_str(&format!("{}. {}\n", monster.id, monster.name));
+
+            //     if let Some(wikipedia) = monster.wikipedia {
+            //         buffer_string.push_str(&format!("<{}>\n", wikipedia));
+            //     }
+            // }
+
+            // msg.channel_id.say(&ctx, buffer_string).await.unwrap();
         } else if msg.content.trim() == "/gz countdown" {
             let mut buffer_string = String::new();
 
@@ -117,32 +148,124 @@ impl EventHandler for Bot {
 
             msg.channel_id.say(&ctx, "GOZILLA!").await.unwrap();
         } else if msg.content.trim() == "/gz help" {
-
-
             msg.channel_id.say(&ctx, HELP).await.unwrap();
         } else if let Some(year) = msg.content.strip_prefix("/gz year") {
-            println!("{}", year);
+            // println!("{}", year);
 
-            let year: i32 = year.trim().parse().unwrap();
+            // let year: i32 = year.trim().parse().unwrap();
 
-            let films = sqlx::query!("SELECT * FROM films WHERE year = ?", year)
-                .fetch_all(&self.database) // < Where the command will be executed
-                .await
-                .unwrap();
+            // let films = sqlx::query!("SELECT * FROM films WHERE year = ?", year)
+            //     .fetch_all(&self.database) // < Where the command will be executed
+            //     .await
+            //     .unwrap();
+
+            // for film in films {
+            //     msg.channel_id.say(&ctx, film.title).await.unwrap();
+            // }
+        } else if let Some(film_id) = msg.content.strip_prefix("/gz next") {
+            //     let film_id: i32 = film_id.trim().parse().unwrap();
+
+            //     sqlx::query!("INSERT INTO watched (film_id) VALUES (?)", film_id)
+            //         .execute(&self.database) // < Where the command will be executed
+            //         .await
+            //         .unwrap();
+
+            //     let film = sqlx::query!(
+            //         "SELECT films.title FROM watched INNER JOIN films ON watched.film_id = films.id ORDER BY watched.id DESC"
+            //     )
+            //     .fetch_one(&self.database) // < Where the command will be executed
+            //     .await
+            //     .unwrap();
+
+            //     // for film in films {
+            //     //     msg.channel_id.say(&ctx, film.title).await.unwrap();
+            //     // }
+
+            //     msg.channel_id.say(&ctx, &film.title).await.unwrap();
+            // } else if let Some(monster_id) = msg.content.strip_prefix("/gz film_by_monster") {
+            //     let monster_id: i32 = monster_id.trim().parse().unwrap();
+
+            //     let films = sqlx::query!(
+            //         "SELECT films.* FROM monsters_by_film INNER JOIN films ON monsters_by_film.film_id = films.id WHERE monsters_by_film.monster_id = ?", monster_id
+            //     )
+            //     .fetch_all(&self.database) // < Where the command will be executed
+            //     .await
+            //     .unwrap();
+
+            //     for film in films {
+            //         msg.channel_id.say(&ctx, film.title).await.unwrap();
+            //     }
+
+            // msg.channel_id.say(&ctx, &film.title).await.unwrap();
+        } else if let Some(search_term) = msg.content.strip_prefix("/gz monster") {
+            let search_term = search_term.trim();
+
+            let monster_id: i64 = match search_term.parse::<i32>() {
+                Ok(monster_id) => {
+                    let monster = sqlx::query!("SELECT * FROM monsters WHERE id = ?", monster_id)
+                        .fetch_one(&self.database) // < Where the command will be executed
+                        .await
+                        .unwrap();
+
+                    let message = format!(
+                        "**{}. {}**\n_AKA {}_\n{}\n<{}>\n\n",
+                        monster.id,
+                        monster.name,
+                        monster.alternate_names,
+                        monster.description,
+                        monster.wikizilla
+                    );
+
+                    msg.channel_id.say(&ctx, &message).await.unwrap();
+
+                    monster.id
+                }
+                Err(_) => {
+                    let wildcard_term = format!("%{}%", search_term);
+
+                    let monster = sqlx::query!(
+                        "SELECT * FROM monsters WHERE name LIKE ? OR alternate_names LIKE ?",
+                        wildcard_term,
+                        wildcard_term
+                    )
+                    .fetch_one(&self.database) // < Where the command will be executed
+                    .await
+                    .unwrap();
+
+                    let message = format!(
+                        "**{}. {}**\n_AKA {}_\n{}\n<{}>\n\n",
+                        monster.id,
+                        monster.name,
+                        monster.alternate_names,
+                        monster.description,
+                        monster.wikizilla
+                    );
+
+                    msg.channel_id.say(&ctx, &message).await.unwrap();
+
+                    monster.id
+                }
+            };
+
+            let films = sqlx::query!(
+                "SELECT films.* FROM monsters_by_film INNER JOIN films ON monsters_by_film.film_id = films.id WHERE monsters_by_film.monster_id = ?", monster_id
+            )
+            .fetch_all(&self.database) // < Where the command will be executed
+            .await
+            .unwrap();
+
+            let mut appears_in = "**Appears in:**\n".to_string();
 
             for film in films {
-                msg.channel_id.say(&ctx, film.title).await.unwrap();
+                appears_in.push_str(&format!(
+                    "{}. {} ({})\n<{}>\n\n",
+                    film.id, film.title, film.year, film.wikipedia
+                ));
             }
+
+            msg.channel_id.say(&ctx, &appears_in).await.unwrap();
         }
     }
-}
-
-#[derive(Deserialize, Debug)]
-struct Film {
-    pub id: i32,
-    pub title: String,
-    pub year: i32,
-    pub monsters: String,
 }
 
 impl Display for Film {
@@ -153,7 +276,7 @@ impl Display for Film {
 
 #[tokio::main]
 async fn main() {
-    dotenv::dotenv().ok();
+    dotenvy::dotenv().ok();
     // std::env::set_var("DATABASE_URL", "sqlite:examples/e16_sqlite_database/database.sqlite");
     // std::env::set_var(
     //     "DISCORD_TOKEN",
@@ -161,13 +284,6 @@ async fn main() {
     // );
     // Configure the client with your Discord bot token in the environment.
     let token = std::env::var("DISCORD_TOKEN").expect("Expected a token in the environment");
-
-    let path = "./films.json";
-    let data = std::fs::read_to_string(path).expect("Unable to read file");
-    let res: Vec<Film> = serde_json::from_str(&data).expect("Unable to parse");
-    // for film in &res {
-    //     println!("{:?}", film);
-    // }
 
     // Initiate a connection to the database file, creating the file if required.
     let database = sqlx::sqlite::SqlitePoolOptions::new()
@@ -186,26 +302,52 @@ async fn main() {
         .await
         .expect("Couldn't run database migrations");
 
-    let path = "./films.json";
+    let path = "./monsters.json";
     let data = std::fs::read_to_string(path).expect("Unable to read file");
-    let res: Vec<Film> = serde_json::from_str(&data).expect("Unable to parse");
-    for film in &res {
+    let monsters: Vec<Monster> = serde_json::from_str(&data).expect("Unable to parse");
+    for monster in &monsters {
         sqlx::query!(
-            "INSERT OR REPLACE INTO films (id, title, year, monsters) VALUES (?, ?, ?, ?)",
-            film.id,
-            film.title,
-            film.year,
-            film.monsters,
+            "INSERT OR REPLACE INTO monsters (id, name, alternate_names, wikipedia, wikizilla, description) VALUES (?, ?, ?, ?, ?, ?)",
+            monster.id,
+            monster.name,
+            monster.alternate_names,
+            monster.wikipedia,
+            monster.wikizilla,
+            monster.description
         )
         .execute(&database) // < Where the command will be executed
         .await
         .unwrap();
     }
 
-    let bot = Bot {
-        database,
-        films: res,
-    };
+    let path = "./films.json";
+    let data = std::fs::read_to_string(path).expect("Unable to read file");
+    let films: Vec<Film> = serde_json::from_str(&data).expect("Unable to parse");
+    for film in &films {
+        sqlx::query!(
+            "INSERT OR REPLACE INTO films (id, title, year, wikipedia) VALUES (?, ?, ?, ?)",
+            film.id,
+            film.title,
+            film.year,
+            film.wikipedia,
+        )
+        .execute(&database) // < Where the command will be executed
+        .await
+        .unwrap();
+
+        for monster_id in &film.monsters {
+            sqlx::query!(
+                "INSERT OR REPLACE INTO monsters_by_film (monster_id, film_id) VALUES (?, ?)",
+                monster_id,
+                film.id
+            )
+            .execute(&database) // < Where the command will be executed
+            .await
+            .unwrap();
+        }
+    }
+
+    let bot = Bot { database };
 
     let intents = GatewayIntents::GUILD_MESSAGES
         | GatewayIntents::DIRECT_MESSAGES
